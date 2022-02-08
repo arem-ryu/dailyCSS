@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card html">
+        <div class="circle">
+          <div class="bar"></div>
+          <div class="box"><span>85%</span></div>
+        </div>
+        <div class="text">HTML & CSS</div>
+      </div>
+      <div class="card js">
+        <div class="circle">
+          <div class="bar"></div>
+          <div class="box"><span>70%</span></div>
+        </div>
+        <div class="text">JavaScript</div>
+      </div>
+      <div class="card react">
+        <div class="circle">
+          <div class="bar"></div>
+          <div class="box"><span>60%</span></div>
+        </div>
+        <div class="text">ReactJS</div>
+      </div>
+    </div>
+    <script>
+      function process(card, value, time) {
+        const circle = card.querySelector('.circle');
+        const text = card.querySelector('span');
+        let progress = 0;
+
+        //20단계로 나눠 출력
+        const interval = time / 20;
+        const valueInterval = value / 20;
+
+        const timer = setInterval(() => {
+          progress += valueInterval;
+          if (progress > value) {
+            progress = value;
+          }
+
+          const angle = `${(progress * 3.6).toFixed()}`;
+
+          //conic-gradient로 Circle Progress 구현
+          circle.style.background = `
+            linear-gradient(#fff, #fff),
+            conic-gradient(#a445b2 ,#fa4299 ${angle}deg, #ececec ${angle}deg)
+            `;
+
+          circle.style.backgroundOrigin = 'border-box';
+          circle.style.backgroundClip = 'content-box, border-box';
+
+          text.innerText = `${progress.toFixed()}%`;
+
+          if (progress >= value) {
+            clearInterval(timer);
+          }
+        }, interval);
+      }
+
+      const html = document.querySelector('.card.html');
+      const js = document.querySelector('.card.js');
+      const react = document.querySelector('.card.react');
+      process(html, 85, 500);
+      process(js, 70, 500);
+      process(react, 60, 500);
+    </script>
+  </body>
+</html>

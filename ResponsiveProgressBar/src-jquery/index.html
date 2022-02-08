@@ -1,0 +1,62 @@
+<!-- https://www.youtube.com/watch?v=Ynr4MR5rQGQ -->
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Circular Progress Bar | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="card">
+        <div class="circle">
+          <div class="bar"></div>
+          <div class="box"><span></span></div>
+        </div>
+        <div class="text">CSS & HTML</div>
+      </div>
+      <div class="card js">
+        <div class="circle">
+          <div class="bar"></div>
+          <div class="box"><span></span></div>
+        </div>
+        <div class="text">JavaScript</div>
+      </div>
+      <div class="card react">
+        <div class="circle">
+          <div class="bar"></div>
+          <div class="box"><span></span></div>
+        </div>
+        <div class="text">React JS</div>
+      </div>
+    </div>
+    <script>
+      let options = {
+        startAngle: -1.55,
+        size: 150,
+        value: 0.85,
+        fill: { gradient: ['#a445b2', '#fa4299'] },
+      };
+
+      $('.circle .bar')
+        .circleProgress(options)
+        .on('circle-animation-progress', function (event, progress, stepValue) {
+          $(this)
+            .parent()
+            .find('span')
+            .text(String(stepValue.toFixed(2).substr(2)) + '%');
+        });
+
+      $('.js .bar').circleProgress({
+        value: 0.7,
+      });
+
+      $('.react .bar').circleProgress({
+        value: 0.6,
+      });
+    </script>
+  </body>
+</html>

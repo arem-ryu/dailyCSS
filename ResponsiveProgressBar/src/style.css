@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(to right, #a445b2, #fa4299);
+}
+
+.wrapper {
+  width: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper .card {
+  width: calc(33% - 20px);
+  background: #fff;
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.wrapper .card .circle {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  /* border: 8px solid #fa4299; */
+  border-radius: 50%;
+  cursor: default;
+
+  /* Border에 Gradient 적용하기 위한 스타일
+    MDN 예제에 border-image와 border-image-slice 이용하여 구현했으나
+    border-image 속성과 border-radius 속성이 호환이 되지 않아 사용 불가
+    background-image에 적용하여 clip 시켜 사용
+  */
+  border: 8px solid transparent;
+  background: linear-gradient(#fff, #fff),
+    conic-gradient(#fa4299 60deg, #ececec 60deg);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.card .circle .box,
+.card .circle .box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.card .circle .box {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.card .circle:hover .box {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.card .circle .box span,
+.card .text {
+  background: linear-gradient(to right, #a445b2, #fa4299);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.card .circle .box span {
+  font-size: 38px;
+  font-weight: 600;
+  font-family: sans-serif;
+  transform: translate(-45%, -50%);
+  transition: all 0.1s;
+}
+
+.card .circle:hover .box span {
+  transform: translate(-45%, -50%) scale(1.09);
+}
+
+.card .text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 753px) {
+  .wrapper {
+    width: 700px;
+  }
+
+  .wrapper .card {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 505px) {
+  .wrapper {
+    width: 500px;
+  }
+
+  .wrapper .card {
+    width: 100%;
+  }
+}
