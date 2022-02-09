@@ -1,0 +1,40 @@
+<!--  https://www.youtube.com/watch?v=HWLcpnDJs90-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF=8" />
+    <title>Action Menu Microinteractions</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="list">
+      <div class="user">
+        <div class="imgBx">
+          <img src="user.jpg" />
+        </div>
+        <div class="details">
+          <h3>Maureen Robinson</h3>
+          <p>Aerospace Engineer</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <span><i class="fa-regular fa-pen-to-square"></i></span>
+        <span><i class="fa-regular fa-heart"></i></span>
+        <span><i class="fa-regular fa-trash-can"></i></span>
+      </div>
+    </div>
+    <script>
+      let navigation = document.querySelector('.navigation');
+      navigation.onclick = function () {
+        navigation.classList.toggle('active');
+      };
+    </script>
+  </body>
+</html>
