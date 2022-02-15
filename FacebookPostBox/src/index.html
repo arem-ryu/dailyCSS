@@ -1,0 +1,134 @@
+<!-- https://www.youtube.com/watch?v=squNvpoaRH4 -->
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook Post Box Clone | Coding Nepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAweome CDN LINK For Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <section class="post">
+          <header>Create Post</header>
+          <form action="#">
+            <div class="content">
+              <img src="icons/Logo.png" alt="" />
+              <div class="details">
+                <p>CodingNepal</p>
+                <div class="privacy">
+                  <i class="fas fa-user-friends"></i>
+                  <span>Friends</span>
+                  <i class="fas fa-caret-down"></i>
+                </div>
+              </div>
+            </div>
+            <textarea
+              placeholder="what's on your mind, Conding Nepal?"
+              required
+            ></textarea>
+            <div class="theme-emoji">
+              <img src="icons/theme.svg" alt="" />
+              <img src="icons/smile.svg" alt="" />
+            </div>
+            <div class="options">
+              <p>Add to your post</p>
+              <ul class="list">
+                <li><img src="icons/gallery.svg" alt="" /></li>
+                <li><img src="icons/tag.svg" alt="" /></li>
+                <li><img src="icons/emoji.svg" alt="" /></li>
+                <li><img src="icons/mic.svg" alt="" /></li>
+                <li><img src="icons/more.svg" alt="" /></li>
+              </ul>
+            </div>
+            <button>Post</button>
+          </form>
+        </section>
+        <section class="audience">
+          <header>
+            <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
+            <p>Select Audience</p>
+          </header>
+          <div class="content">
+            <p>Who can see your post?</p>
+            <span
+              >Your post will show up in New Feed, on your profile and search
+              result</span
+            >
+          </div>
+          <ul class="list">
+            <li class="active">
+              <div class="column">
+                <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                <div class="details">
+                  <p>Public</p>
+                  <span>Anyone on or off Facebook</span>
+                </div>
+              </div>
+              <div class="radio"></div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="icon"><i class="fas fa-user-friends"></i></div>
+                <div class="details">
+                  <p>Firends</p>
+                  <span>Anyone on or off Facebook</span>
+                </div>
+              </div>
+              <div class="radio"></div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="icon"><i class="fas fa-user"></i></div>
+                <div class="details">
+                  <p>Specific</p>
+                  <span>Anyone on or off Facebook</span>
+                </div>
+              </div>
+              <div class="radio"></div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <div class="details">
+                  <p>Only me</p>
+                  <span>Anyone on or off Facebook</span>
+                </div>
+              </div>
+              <div class="radio"></div>
+            </li>
+            <li>
+              <div class="column">
+                <div class="icon"><i class="fas fa-cog"></i></div>
+                <div class="details">
+                  <p>Custom</p>
+                  <span>Anyone on or off Facebook</span>
+                </div>
+              </div>
+              <div class="radio"></div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script>
+      const container = document.querySelector('.container');
+      privacy = container.querySelector('.privacy');
+      arrowBack = container.querySelector('.arrow-back');
+
+      privacy.addEventListener('click', () => {
+        container.classList.add('active');
+      });
+
+      arrowBack.addEventListener('click', () => {
+        container.classList.remove('active');
+      });
+    </script>
+  </body>
+</html>

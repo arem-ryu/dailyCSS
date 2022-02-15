@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wgth@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins' sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#00c6ff, #0078ff);
+}
+
+.container {
+  height: 490px;
+  width: 500px;
+  background: #fff;
+  box-shadow: 0 12px 280x rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+.container.active {
+  height: 590px;
+}
+
+.container .wrapper {
+  display: flex;
+  width: 1000px;
+}
+.container section {
+  width: 500px;
+  background: #fff;
+}
+.container .post {
+  transition: margin-left 0.18s ease;
+}
+
+.container.active .post {
+  margin-left: -500px;
+}
+
+.post header {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  padding: 17px 0;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.post form {
+  margin: 20px 25px;
+}
+.post form :where(.content, .details .privacy),
+.audience .list li .column {
+  display: flex;
+  align-items: center;
+}
+
+.post form .content img {
+  max-width: 52px;
+}
+
+.post form .content .details {
+  margin: -3px 0 0 12px;
+}
+
+form .content .details p {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+form .content .details .privacy {
+  cursor: pointer;
+  max-width: 98px;
+  font-size: 11px;
+  background: #e4e6eb;
+  justify-content: space-between;
+  margin-top: 3px;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.details .privacy span {
+  font-size: 13px;
+  margin-top: 1px;
+  font-weight: 500;
+}
+
+.details .privacy i:last-child {
+  font-size: 13px;
+  margin-left: 1px;
+}
+
+.post form :where(textarea, button) {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.post form textarea {
+  resize: none;
+  min-height: 100px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.post form :where(.theme-emoji, .options),
+.audience .list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post form .theme-emoji img {
+  cursor: pointer;
+}
+
+form .theme-emoji img:last-child {
+  max-width: 24px;
+}
+
+form .options {
+  height: 57px;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin: 15px 0;
+  border: 1px solid #b9b9b9;
+}
+
+form .options p {
+  color: #595959;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+form .options :where(.list, li),
+.audience :where(.arrow-back, .icon, .radio) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form .options .list li {
+  list-style: none;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+}
+
+.options .list li:hover {
+  background: #f0f1f4;
+}
+
+.options .list li img {
+  cursor: pointer;
+  width: 23px;
+}
+
+form button {
+  color: #bcc0c4;
+  height: 53px;
+  cursor: no-drop;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 7px;
+  background: #e2e5e9;
+}
+
+form textarea:valid ~ button {
+  color: #fff;
+  cursor: pointer;
+  background: #4599ff;
+}
+
+.container .audience {
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.container.active .audience {
+  opacity: 1;
+}
+
+.audience header {
+  padding: 17px 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.audience header .arrow-back {
+  position: absolute;
+  left: 25px;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  color: #747474;
+  background: #e4e6eb;
+  border-radius: 50%;
+}
+.audience header p {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.audience .content {
+  margin: 20px 25px 0;
+}
+
+.audience .content p {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.audience .content span {
+  font-size: 14px;
+  color: #65676b;
+}
+.audience .list {
+  margin: 15px 16px 20px;
+}
+
+.audience .list li {
+  cursor: pointer;
+  list-style: none;
+  margin-bottom: 5px;
+  padding: 12px 10px;
+  border-radius: 7px;
+}
+
+.audience .list li:hover {
+  background: #f0f1f4;
+}
+
+.audience .list li.active,
+.audience .list li.active:hover {
+  background: #e5f1ff;
+}
+
+.audience .list li .column .icon {
+  width: 50px;
+  height: 50px;
+  color: #333;
+  background: #e4e6eb;
+  border-radius: 50%;
+}
+.audience .list li .column .details {
+  margin-left: 15px;
+}
+
+.list li .column .details p {
+  font-weight: 500;
+}
+
+.list li .column .details span {
+  font-size: 14px;
+  color: #65676b;
+}
+
+.audience .list li .radio {
+  height: 20px;
+  width: 20px;
+  border: 1px solid #707070;
+  border-radius: 50px;
+}
+
+.audience .list li.active .radio {
+  border: 2px solid #4599ff;
+}
+.audience .list li.active .radio::before {
+  content: '';
+  height: 12px;
+  width: 12px;
+  background: #4599ff;
+  border-radius: inherit;
+}
